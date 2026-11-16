@@ -79,11 +79,10 @@ export default function Gallery() {
                     setSelectedCategory(cat.id);
                     setActiveLightboxIndex(null);
                   }}
-                  className={`text-xs uppercase tracking-widest px-4 py-2.5 whitespace-nowrap transition-all duration-300 font-medium cursor-pointer ${
-                    selectedCategory === cat.id
-                      ? "bg-cafe-primary text-cafe-bg shadow-xs"
-                      : "bg-cafe-bg text-cafe-muted hover:text-cafe-primary border border-cafe-border"
-                  }`}
+                  className={`text-xs uppercase tracking-widest px-4 py-2.5 whitespace-nowrap transition-all duration-300 font-medium cursor-pointer ${selectedCategory === cat.id
+                    ? "bg-cafe-primary text-cafe-bg shadow-xs"
+                    : "bg-cafe-bg text-cafe-muted hover:text-cafe-primary border border-cafe-border"
+                    }`}
                 >
                   {cat.label}
                 </button>
@@ -99,7 +98,7 @@ export default function Gallery() {
         {/* Asymmetrical Masonry-Style Gallery Grid */}
         <section className="py-16 md:py-24 bg-cafe-bg text-cafe-text">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-start">
+            <div className="max-lg:grid max-md:grid-cols-1 max-lg:grid-cols-2 lg:columns-3  gap-6 sm:gap-8 items-start">
               {filteredGallery.map((item, index) => {
                 // Vary aspect ratios intentionally for editorial composition
                 const aspectClasses = {
@@ -114,9 +113,9 @@ export default function Gallery() {
                   <div
                     key={item.id}
                     onClick={() => setActiveLightboxIndex(index)}
-                    className="group cursor-pointer relative overflow-hidden bg-cafe-surface border border-cafe-border shadow-xs hover:shadow-xl transition-all duration-500"
+                    className="group max-lg:flex max-lg:flex-col max-lg:h-full mb-6 cursor-pointer relative overflow-hidden bg-cafe-surface border border-cafe-border shadow-xs hover:shadow-xl transition-all duration-500"
                   >
-                    <div className={`w-full ${aspect} overflow-hidden relative`}>
+                    <div className={`w-full ${aspect} max-lg:flex-1 overflow-hidden relative`}>
                       <img
                         src={item.image}
                         alt={item.title}
