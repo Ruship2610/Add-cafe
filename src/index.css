@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  /* Backgrounds */
+  --color-cafe-bg: #F5F5F1;
+  --color-cafe-surface: #E9EDEB;
+
+  /* Brand colors */
+  --color-cafe-primary: #344D5B;
+  --color-cafe-secondary: #718895;
+  --color-cafe-accent: #90a6b0;
+
+  /* Typography colors */
+  --color-cafe-text: #252F35;
+  --color-cafe-muted: #758087;
+
+  /* Dark sections */
+  --color-cafe-dark: #25343D;
+  --color-cafe-dark-surface: #3F5967;
+
+  /* Borders */
+  --color-cafe-border: #DCE3E5;
+  --color-cafe-border-dark: #506571;
+
+  /* Fonts */
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-script: "Caveat", cursive;
+}
+
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-cafe-bg);
+    color: var(--color-cafe-text);
+    font-family: var(--font-sans);
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--color-cafe-bg);
+    color: var(--color-cafe-text);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--color-cafe-primary);
+    color: var(--color-cafe-bg);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cafe-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-cafe-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-cafe-primary);
+}
+
+/* Subtle image grain overlay */
+.texture-paper {
+  background-image: radial-gradient(color-mix(in srgb, var(--color-cafe-text) 6%, transparent) 1px,
+      transparent 1px);
+  background-size: 24px 24px;
+}
+
+
+button,
+a {
+  border-radius: 10px;
+}
